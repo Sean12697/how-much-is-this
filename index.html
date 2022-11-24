@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Much Is This?</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <select name="country" id="country">
+        <option value="US" selected>🇺🇸</option>
+        <option value="UK">🇬🇧</option>
+        <!-- <option value="USD">$</option> -->
+    </select>
+    <div id="content">
+        <h1>How Much Is This?</h1>
+        <p>Helping you convert prices to human understandable text.</p>
+        <div id="inputs">
+            <select name="cars" id="cars">
+                <option value="GBP" selected>£</option>
+                <!-- <option value="USD">$</option> -->
+            </select>
+            <input type="number" name="value" id="value">
+            <input type="button" id="submit" value="Submit">
+        </div>
+        <h2 id="output"></h2>
+        <small id="source"></small>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
