@@ -4,12 +4,12 @@ window.addEventListener('load', function() {
 });
 
 function calculate() {
-    let value = this.document.getElementById("value").value;
+    let value = document.getElementById("value").value;
     if (value > 0) {
         let currancySymbol = "£";
-        let output = this.document.getElementById("output");
+        let output = document.getElementById("output");
 
-        if (this.document.getElementById("country").value == "US") {
+        if (document.getElementById("country").value == "US") {
             let item = prices[Math.floor(Math.random() * prices.length)];
             let _quantity = value / item.unit, quantity = _quantity;
             let isExact = _quantity % 1 == 0;
@@ -22,9 +22,10 @@ function calculate() {
             }
 
             output.innerText = `${preceedingText}${ quantity.toLocaleString( undefined, {}) } ${ item.name }${ quantity > 1 ? "'s" : "" }*`;
-            this.document.getElementById("source").innerHTML = `*Based on the price of ${currancySymbol}${item.unit.toLocaleString(undefined, { minimumFractionDigits: 2 })} per ${ item.name }, based on information manually collected from <a href="${ item.source.link }" target="_blank">${ item.source.name }</a> on ${ item.source.lastVisited }.`;
+            document.getElementById("source").innerHTML = `*Based on the price of ${currancySymbol}${item.unit.toLocaleString(undefined, { minimumFractionDigits: 2 })} per ${ item.name }, based on information manually collected from <a href="${ item.source.link }" target="_blank">${ item.source.name }</a> on ${ item.source.lastVisited }.`;
         } else {
             output.innerText = `${currancySymbol}${value.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
+            document.getElementById("source").innerHTML = "";
         }
     }
 }
