@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
     this.document.getElementById("submit").addEventListener("click", calculate);
-    document.getElementById('country').addEventListener('change', calculate);
+    this.document.getElementById('country').addEventListener('change', calculate);
 });
 
 function calculate() {
