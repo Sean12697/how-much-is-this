@@ -1,9 +1,13 @@
 window.addEventListener('load', function() {
-    // 
-    this.document.getElementById("submit").addEventListener("click", () => {
-            let currancySymbol = "£";
-            let value = this.document.getElementById("value").value;
-            let output = this.document.getElementById("output");
+    this.document.getElementById("submit").addEventListener("click", calculate);
+    document.getElementById('country').addEventListener('change', calculate);
+});
+
+function calculate() {
+    let value = this.document.getElementById("value").value;
+    if (value > 0) {
+        let currancySymbol = "£";
+        let output = this.document.getElementById("output");
 
         if (this.document.getElementById("country").value == "US") {
             let item = prices[Math.floor(Math.random() * prices.length)];
@@ -22,8 +26,8 @@ window.addEventListener('load', function() {
         } else {
             output.innerText = `${currancySymbol}${value.toLocaleString(undefined, { minimumFractionDigits: 2 })}`;
         }
-    })
-});
+    }
+}
 
 const prices = [{
     unit: 0.25,
